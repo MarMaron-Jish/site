@@ -10,6 +10,22 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
     <script>
 
+        function switchLanguage(lang) {
+            // Define file names based on language
+            const files = {
+                en: 'english.html',
+                he: 'hebrew.html',
+                ar: 'index.html' // Current Arabic file
+            };
+
+            // Redirect to the selected language file
+            if (files[lang]) {
+                window.location.href = files[lang];
+            } else {
+                alert('Language not supported');
+            }
+        }
+
         function smoothScroll(target) {
             document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
             // Close the navbar if it's open
@@ -217,6 +233,54 @@
                 color: white;
                 transition: background-color 0.5s ease; /* Smooth transition for background color */
             }
+
+            .dropdown-toggle {
+                    border-radius: 30px;
+                    border-style: solid;
+                    border-color: #f8feff;
+                    margin: 10px;
+                    border-width: thick;
+                    padding: 8px 20px;
+                    color: #000000;
+                    background-color: #f8feff;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    font-size: 16px;
+                    text-align: center;
+                }
+
+                .dropdown-toggle:hover {
+                    background-color: rgba(0, 0, 0, 0.8);
+                    color: white;
+                    transition: background-color 0.5s ease;
+                }
+
+                .dropdown-menu {
+                    background-color: #f8feff;
+                    border-radius: 10px;
+                    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                    min-width: 150px;
+                    text-align: right;
+                }
+
+                .languageSwicher {
+                    border-radius: 30px;
+                    border-style: solid;
+                    border-color: #f8feff;
+                    margin: 10px;
+                    border-width: thick;
+                    padding: 8px 20px;
+                    color: #000000;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    background-color: #f8feff;
+                }
+
+                .languageSwicher:hover {
+                    background-color: rgba(0, 0, 0, 0.8);
+                    color: #fff;
+                }
+
             @media (max-width: 576px) {
                 .navbar-nav {
                     margin-left: 0;
@@ -927,6 +991,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
+                <li>
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
+                            <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z"/>
+                            <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31"/>
+                          </svg></button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button class="languageSwicher" onclick="switchLanguage('ar')">العربية</button>
+                            <button class="languageSwicher" onclick="switchLanguage('he')">עברית</button>
+                        </div>
+                      </div>
+                </li>
                 <li class="nav-item">
                     <button class="scroll-button" id="navbar-home" dir="auto" onclick="smoothScroll('#home'); showAllSections();"><a class="nav-link" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Home</font></font></a></button>
                 </li>
