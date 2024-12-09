@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html class="translated-ltr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>St. Maron Parish - Jish</title>
+    <link rel="icon" href="https://i.postimg.cc/1X3CFRx8/logo-2.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <script>
+
+        function smoothScroll(target) {
+            document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+            // Close the navbar if it's open
+            const navbarCollapse = document.querySelector('.navbar-collapse');
+            if (navbarCollapse.classList.contains('show')) {
+                navbarCollapse.classList.remove('show');
+            }
+        }
+
+        // Function to show the apostolic section
+        function showApostolicSection() {
+            // Show the apostolic section and hide other sections
+            const sections = document.querySelectorAll('.section-content');
+            sections.forEach(section => {
+                if (section.id !== 'apostolic') {
+                    section.style.display = 'none';
+                } else {
+                    section.style.display = 'block';
+                }
+            });
+        }
+
+        // Function to show the info section
+        function showInfoSection() {
+            // Show the info section and hide other sections
+            const sections = document.querySelectorAll('.section-content');
+            sections.forEach(section => {
+                if (section.id !== 'info') {
+                    section.style.display = 'none';
+                } else {
+                    section.style.display = 'block';
+                }
+            });
+        }
+
+        // Function to show the all section (exept apostolic and info)
+        function showAllSections() {
+            // Show all sections except apostolic section and home section and info section
+            const sections = document.querySelectorAll('.section-content');
+            sections.forEach(section => {
+                if (section.id !== 'apostolic' && section.id !== 'home' && section.id !== 'info') {
+                    section.style.display = 'block';
+                } else if (section.id === 'home') {
+                    section.style.display = 'flex';
+                } else {
+                    section.style.display = 'none'; // Keep apostolic section and info hidden
+                }
+            });
+        }
+
+        /*apostolic subsections*/
+        function showSubSection(subSectionId) {
+            const subSection = document.getElementById(subSectionId);
+            if (subSection) {
+                const apostolicSection = document.getElementById('apostolic');
+                const subSections = apostolicSection.querySelectorAll('.section-content > div');
+                subSections.forEach(section => {
+                    if (section.id === subSectionId) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        /*info subsections*/
+        function showInfoSubSection(subSectionId) {
+            const subSection = document.getElementById(subSectionId);
+            if (subSection) {
+                const infoSection = document.getElementById('info');
+                const subSections = infoSection.querySelectorAll('.section-content > div');
+                subSections.forEach(section => {
+                    if (section.id === subSectionId) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            }
+        }
+        
+        /*jish subsections*/
+        function showJishSubSection(subSectionId) {
+            const subSection = document.getElementById(subSectionId);
+            if (subSection) {
+                const jishSection = document.getElementById('jish');
+                const subSections = jishSection.querySelectorAll('.info-content > div');
+                subSections.forEach(section => {
+                    if (section.id === subSectionId) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        /*jish churches subsections*/
+        function showChurchSubSection(subSectionId) {
+            const subSection = document.getElementById(subSectionId);
+            if (subSection) {
+                const jchurchesSection = document.getElementById('churches');
+                const subSections = jchurchesSection.querySelectorAll('.jish-content');
+                subSections.forEach(section => {
+                    if (section.id === subSectionId) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        let currentShownSectionId = null;
+
+        /*harakat mar maraon subsubsection*/
+        function showHarakatSubSection(subSectionId) {
+            const subSection = document.getElementById(subSectionId);
+            if (subSection) {
+                if (subSection.style.display === 'block') {
+                    subSection.style.display = 'none';
+                } else {
+                    subSection.style.display = 'block';
+                }
+            }
+        }
+
+
+        /*berem subsections*/
+        function showBeremSubSection(subSectionId) {
+            const subSection = document.getElementById(subSectionId);
+            if (subSection) {
+                const beremSection = document.getElementById('berem');
+                const subSections = beremSection.querySelectorAll('.info-content > div');
+                subSections.forEach(section => {
+                    if (section.id === subSectionId) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+    </script>
+
+    <style>
+        /*navbar*/
+            .navbar {
+                border-width: thick;
+                transition: top 0.3s ease; /* Smooth transition for hiding/showing */
+                z-index: 1000; /* Ensure the navbar is above other content */
+            }
+
+            a img {
+                padding-left: 80px;
+                height: 90px;
+                width: auto;
+            }
+
+            .navbar-nav {
+                margin-left: auto;
+            }
+
+            .custom-lightblue {
+                background-color: #f8feff;
+            }
+
+            /*navbar buttons*/
+            .scroll-button {
+                border-radius: 30px;
+                border-style: solid;
+                border-color: #f8feff;
+                margin: 10px;
+                border-width: thick;
+                padding: 8px 20px;
+                color: #000000;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                background-color: #f8feff;
+            }
+
+            .navbar-toggler-icon {
+                margin-right: 80px;
+                border-radius: 30px;
+                border-style: inset;
+                border-color: rgb(67, 67, 67);
+                margin: 10px;
+                border-width: thick;
+                background-color: rgba(150, 150, 150, 0.427);
+                color: white;
+            }
+
+            .navbar-nav a {
+                text-decoration: none;
+                color: inherit;
+            }
+            
+            span h6 {
+                margin-right: 200px;
+            }
+            .scroll-button:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+                color: white;
+                transition: background-color 0.5s ease; /* Smooth transition for background color */
+            }
+            @media (max-width: 576px) {
+                .navbar-nav {
+                    margin-left: 0;
+                }
+                .navbar-toggler-icon {
+                    margin-right: 5PX;
+                }
+                .navbar-collapse {
+                    text-align: center;
+                }
+                .scroll-button {
+                    margin: 10px auto;
+                }
+            }
+
+        /*home section*/
+            #home {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-size: cover;
+                background-position: center;
+                text-align: center;
+            }
+
+            #home .content {
+                text-align: center;
+                background-color: rgba(0, 0, 0, 0.5);
+                padding: 15px;
+                border-radius: 20px;
+            }
+
+            #home h1 {
+                color: #fff;
+                font-size: 3rem;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+                margin-bottom: 20px;
+            }
+
+        /*pray section*/
+            #pray {
+                background-color: #dbdbdb76; /* Background color for the section */
+                padding: 100px 0; /* Add padding as needed */
+                text-align: center; /* Center the content horizontally */
+            }
+
+            #pray .content {
+                max-width: 800px; /* Set a maximum width for the content */
+                margin: 0 auto; /* Center the content horizontally */
+                margin-top: 20px;
+            }
+
+            #pray h2 {
+                color: #000000; /* Heading color */
+                font-size: 2rem; /* Heading font size */
+                margin-bottom: 20px; /* Add spacing below the heading */
+            }
+
+            .prayer-info {
+                background-color: #d7d7d7c6; /* Background color for each prayer info block */
+                padding: 20px; /* Add padding to each block */
+                margin-bottom: 20px; /* Add spacing between blocks */
+                border-radius: 8px; /* Add rounded corners to the blocks */
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+                text-decoration-thickness: thick;
+                border-radius: 50px;
+            }
+
+            .prayer-info h3 {
+                color: #000000; /* Heading color for each prayer */
+                font-size: 1.5rem; /* Font size for prayer headings */
+                text-decoration: underline;
+            }
+
+            .prayer-info p {
+                color: #000000; /* Text color for prayer details */
+                margin-bottom: 10px; /* Add spacing between details */
+            }
+
+            /*contact section*/
+            footer {
+                background-color: #bababa76;
+                padding: 20px;
+                text-align: center;
+            }
+
+            .contact-info, .location, .social-media {
+                margin-bottom: 20px;
+            }
+
+            .social-media a {
+                border: none;
+                background-color: rgb(255, 255, 255); /* Button background color */
+                color: #fff; /* Button text color */
+                padding: 10px 20px; /* Button padding */
+                /*margin: 10px;  Button margin */
+                border-radius: 15px; /* Button border radius */
+                cursor: pointer;
+                /* Updated styles for mobile view */
+                padding: 8px 16px; /* Adjust button padding for smaller screens */
+            }
+
+            .social-media a i {
+                font-size: 24px; /* Adjust the size as needed */
+                color: #000000; /* Facebook brand color */
+                /* Add more styles as needed */
+            }
+
+            .social-media a:hover {
+                background-color: #c7c7c7; /* Change background color on hover */
+                transition: background-color 0.5s ease;
+            }
+
+            @media (max-width: 768px) {
+                footer {
+                    padding: 10px;
+                }
+
+                .social-media a {
+                    margin-right: 5px;
+                }
+            }
+
+            .location img {
+                height: 35px;
+                width: auto;
+            }
+
+            .location a {
+                text-decoration: none;
+                color: #000000;
+                padding-right: 100px;
+            }
+
+        /*info section*/
+            #info {
+                padding-top: 150px; /* Add padding to top of sections to prevent hiding behind the navigation bar - Adjust the value as needed */
+                display: none;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column; /* Arrange items in a column */
+                text-align: center; /* Center text horizontally */
+                background-color: #bababa76;
+                /* Updated styles for mobile view */
+                padding: 220px 20px; /* Adjust padding for mobile */
+            }
+
+            .info-content img {
+                width: 15vw;
+                height: auto;
+                margin-bottom: 15px;
+            }
+
+            .info-button {
+                border: none;
+                background-color: rgb(100, 100, 100); /* Button background color */
+                color: #fff; /* Button text color */
+                padding: 10px 20px; /* Button padding */
+                /*margin: 10px;  Button margin */
+                border-radius: 15px; /* Button border radius */
+                cursor: pointer;
+                /* Updated styles for mobile view */
+                padding: 8px 16px; /* Adjust button padding for smaller screens */
+            }
+
+            .info-content p {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: large;
+            }
+
+            .info-button:hover {
+                background-color: #949393; /* Change background color on hover */
+                transition: background-color 0.5s ease;
+            }
+
+            /*info Jish section*/
+            .jish-button {
+                border: none;
+                background-color: rgb(100, 100, 100); /* Button background color */
+                color: #fff; /* Button text color */
+                padding: 10px 20px; /* Button padding */
+                /*margin: 10px;  Button margin */
+                border-radius: 15px; /* Button border radius */
+                cursor: pointer;
+                /* Updated styles for mobile view */
+                padding: 8px 16px; /* Adjust button padding for smaller screens */
+            }           
+
+            .jish-content p {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 23px;
+                text-align: right;
+                margin: 0 10vw 0 10vw;
+            }
+
+            .jish-button:hover {
+                background-color: #949393; /* Change background color on hover */
+                transition: background-color 0.5s ease;
+            }
+
+            /* info jish harakat section*/
+            #majless {
+                width: 50vw;
+                height: auto;
+            }
+
+            #beino {
+                width: 10vw;
+                height: auto;
+            }
+
+            #deeb {
+                width: 10vw;
+                height: auto;
+            }
+
+            #choir {
+                width: 50vw;
+                height: auto;
+            }
+
+            #danas {
+                width: 50vw;
+                height: auto;
+            }
+
+            .jish-content .scroll-button {
+                margin-top: 6vw;
+            }
+
+            #safy {
+                width: 20vw;
+                height: auto;
+            }
+            #barca {
+                width: 20vw;
+                height: auto;
+            }
+            #roma {
+                width: 20vw;
+                height: auto;
+            }
+            #espania {
+                width: 20vw;
+                height: auto;
+            }
+            #baby {
+                width: 20vw;
+                height: auto;
+            }
+            #tringle {
+                width: 20vw;
+                height: auto;
+            }
+
+            .pray-trips {
+                margin: 5vw;
+            }
+
+            .jish-content h5 {
+                margin-top: 5px;
+                font-size: 14px;
+            }
+
+            #aytam-help {
+                width: 35vw;
+                height: auto;
+            }
+
+            /*info jish churches maroon section*/
+            #hagar-alasas {
+                width: 20vw;
+                height: auto;
+                margin-right: 5vw;
+            }
+
+            #garaseya {
+                width: 25vw;
+                height: auto;
+            }
+
+            .maroon-photos {
+                margin: 3vw;
+            }
+
+            #maroon-inside {
+                width: 50vw;
+                height: auto;
+            }
+
+            #salon {
+                width: 25vw;
+                height: auto;
+                margin-left: 9.5vw;
+            }
+
+            #salon-d{
+                margin-left: 9.5vw;
+            }
+
+            #diwan {
+                width: 25vw;
+                height: auto;
+            }
+
+            #nadi {
+                width: 25vw;
+                height: auto;
+            }
+
+            #hall {
+                width: 25vw;
+                height: auto;
+            }
+
+            #maktaba {
+                width: 25vw;
+                height: auto;
+            }
+
+            #deer {
+                width: 50vw;
+                height: auto;
+            }
+
+            #sis-noel {
+                width: 10vw;
+                height: auto;
+            }
+
+            #sis-vivian {
+                width: 11vw;
+                height: auto;
+            }
+
+            #sis-michlin {
+                width: 10.5vw;
+                height: auto;
+            }
+
+            #sis-sayeda {
+                width: 12vw;
+                height: auto;
+            }
+
+            #amaret-alwaqef {
+                width: 40vw;
+                height: auto;
+            }
+
+            #hadeket-alaadra {
+                width: 40vw;
+                height: auto;
+            }
+
+            #seyara {
+                width: 40vw;
+                height: auto;
+            }
+
+            @media only screen and (max-width: 768px) {
+                * p {
+                    font-size: 0.7rem;
+                }
+            }
+
+            /*info jish churches Jsayeda section*/
+            #Jsayeda-after1 {
+                width: 25vw;
+                height: auto;
+                margin-right: 2vw;
+            }
+
+            #Jsayeda-after2 {
+                width: 16vw;
+                height: auto;
+            }
+
+            /*info jish churches botros section*/
+            .botros-photos {
+                margin: 3vw;
+            }
+
+            #hadi {
+                width: 10vw;
+                height: auto;
+                margin-right: 3vw;
+            }
+
+            #simon {
+                width: 10vw;
+                height: auto;
+            }
+
+            /*info Berem section*/
+            .berem-button {
+                border: none;
+                background-color: rgb(100, 100, 100); /* Button background color */
+                color: #fff; /* Button text color */
+                padding: 10px 20px; /* Button padding */
+                /*margin: 10px;  Button margin */
+                border-radius: 15px; /* Button border radius */
+                cursor: pointer;
+                /* Updated styles for mobile view */
+                padding: 8px 16px; /* Adjust button padding for smaller screens */
+            }
+
+            .berem-content p {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 23px;
+                text-align: right;
+                margin: 0 10vw 0 10vw;
+            }
+
+            .berem-button:hover {
+                background-color: #949393; /* Change background color on hover */
+                transition: background-color 0.5s ease;
+            }
+
+            #Bchurch-photo {
+                width: 25vw;
+                height: auto;
+                margin-top: 5vw;
+            }
+
+            #Bmadafen {
+                width: 20vw;
+                height: auto;
+            }
+
+        /*apostolic section*/
+            #apostolic {
+                padding-top: 150px; /* Add padding to top of sections to prevent hiding behind the navigation bar - Adjust the value as needed */
+                display: none;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column; /* Arrange items in a column */
+                text-align: center; /* Center text horizontally */
+                background-color: #dbdbdb76;
+                /* Updated styles for mobile view */
+                padding: 220px 20px; /* Adjust padding for mobile */
+            }
+            
+            .apostolic-button {
+                border: none;
+                background-color: rgb(100, 100, 100); /* Button background color */
+                color: #fff; /* Button text color */
+                padding: 10px 20px; /* Button padding */
+                /*margin: 10px;  Button margin */
+                border-radius: 15px; /* Button border radius */
+                cursor: pointer;
+                /* Updated styles for mobile view */
+                padding: 8px 16px; /* Adjust button padding for smaller screens */
+            }
+
+            #AMinfo p {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 23px;
+                text-align: right;
+                margin: 0 10vw 0 10vw;
+            }
+
+            .apostolic-button:hover {
+                background-color: #949393; /* Change background color on hover */
+                transition: background-color 0.5s ease;
+            }
+
+            /*groups*/
+            .members-container {
+                display: flex;
+                flex-wrap: wrap; /* Arrange items in a column */
+                justify-content: center; /* Center items horizontally */
+                align-items: center; /* Center items vertically */
+                gap: 20px; /* Add spacing between members */
+                margin-top: 20px; /* Add top margin for spacing */
+            }
+
+            .member {
+                background-color: #f8f9fa; /* Background color for each member block */
+                padding: 10px 20px 20px 20px; /* Add padding to each member block */
+                border-radius: 35px; /* Add rounded corners */
+                /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  Add shadow for depth */
+                width: 100%; /* Ensure each member block takes full width */
+                max-width: 400px; /* Set a maximum width for each member block */
+                text-align: center; /* Center text horizontally */
+                margin-bottom: 20px; /* Add bottom margin for spacing */
+            }
+
+            .member h3 {
+                color: #000000; /* Heading color */
+                font-size: 1.5rem; /* Font size for member names */
+                margin-bottom: 10px; /* Add spacing below the member name */
+            }
+
+            .member-info {
+                text-align: center; /* Align member info text to the left */
+            }
+
+            .member-info p {
+                margin: 5px 0; /* Add spacing between info items */
+            }
+
+            #groups h3 {
+                margin-top: 30px;
+            }
+
+            /*photos and ekliros*/
+            #photos {
+                align-items: center; /* Aligns items horizontally at the center */
+                text-align: center; /* Aligns text content center within its container */
+            }
+
+            #ekliros {
+                align-items: center; /* Aligns items horizontally at the center */
+                text-align: center; /* Aligns text content center within its container */
+            }
+
+            .photo-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center; /* Aligns items horizontally at the center */
+            }
+
+            .photo-item {
+                flex: 0 0 calc(33% - 20px); /* Adjust width as needed */
+                margin: 10px;
+                text-align: center;
+                border: solid;
+                background-color: white;
+                border-radius: 15px;
+                align-items: center; /* Aligns items horizontally at the center */
+            }
+
+            .photo-item img {
+                max-width: 100%;
+                border-radius: 15px;
+            }
+
+            .photo-item h5 {
+                margin-top: 10px;
+            }
+
+            #lagna {
+                width: 40vw;
+                height: auto;
+            }
+
+            #shabebe-mo5ayam {
+                width: 100vw;
+                height: 23vw;
+            }
+
+            #shabebe-kodas {
+                width: 100vw;
+                height: auto;
+            }
+
+            #fursan-photo {
+                width: 100vw;
+                height: auto;
+            }
+
+            #poland {
+                width: 100vw;
+                height: auto;
+            }
+
+            #malta {
+                width: 100vw;
+                height: auto;
+            }
+
+            #france {
+                width: 100vw;
+                height: auto;
+            }
+
+            #germany {
+                width: 100vw;
+                height: auto;
+            }
+
+            #prague {
+                width: 100vw;
+                height: auto;
+            }
+
+            /*ekliros photos*/
+            #Esaleem {
+                width: 18vw;
+                height: auto;
+            }
+            #Enaji {
+                width: 12vw;
+                height: auto;
+            }
+
+            /*info statistics*/
+            #statistics p {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 23px;
+                text-align: right;
+                margin: 0 10vw 0 10vw;
+            }
+
+            #statistics-img1 {
+                width: 43vw;
+                height: auto;
+            }
+
+            #statistics-img2 {
+                width: 37vw;
+                height: auto;
+            }
+
+            #statistics-img3 {
+                width: 37vw;
+                height: auto;
+            }
+
+            #statistics-img4 {
+                width: 37vw;
+                height: auto;
+            }
+
+            #statistics-img5 {
+                width: 37vw;
+                height: auto;
+            }
+
+            #statistics-img6 {
+                width: 37vw;
+                height: auto;
+            }
+
+            .table-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 10vw;
+            }
+
+            .table-table {
+                width: 80%;
+                max-width: 800px;
+            }
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                border: solid;
+            }
+
+            th, td {
+                padding: 10px;
+                text-align: center;
+                border: 1px solid #000000;
+            }
+
+            th {
+                background-color: #f2f2f2;
+                font-weight: bold;
+            }
+
+            .zawaj-photos {
+                margin: 3vw;
+            }
+
+            #statistics-img8 {
+                width: 35vw;
+                height: auto;
+            }
+
+            #statistics-img9 {
+                width: 37vw;
+                height: auto;
+            }
+
+            #statistics-img10 {
+                width: 37vw;
+                height: auto;
+            }
+
+            @media only screen and (max-width: 768px) {
+                #photos h2 {
+                    font-size: 0.8rem; /* Adjust font size for mobile view */
+                }
+                #ekliros h2 {
+                    font-size: 0.8rem; /* Adjust font size for mobile view */
+                }
+
+                .photo-item h5 {
+                    font-size: 10px; /* Adjust font size for mobile view */
+                }
+            }
+
+    </style>
+
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.26tY-h6gH9w.L.W.O/am=DAY/d=0/rs=AN8SPfrCcgxoBri2FVMQptvuOBiOsolgBw/m=el_main_css"></head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-lightblue custom-lightblue fixed-top">
+        <a class="navbar-brand" href="#"><img src="https://i.postimg.cc/1X3CFRx8/logo-2.png" alt="Logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><img src="https://i.postimg.cc/Gmwbz8C7/arrow-drop-down-FILL0-wght400-GRAD0-opsz24.png" alt="icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <button class="scroll-button" id="navbar-home" dir="auto" onclick="smoothScroll('#home'); showAllSections();"><a class="nav-link" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Home</font></font></a></button>
+                </li>
+                <li class="nav-item">
+                    <button class="scroll-button" id="navbar-pray" dir="auto" onclick="smoothScroll('#pray'); showAllSections();"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Prayers and Masses</font></font></button>
+                </li>
+                <li class="nav-item">
+                    <button class="scroll-button" id="navbar-info" dir="auto" onclick="smoothScroll('#info'); showInfoSection();"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">information</font></font></button>
+                </li>
+                <li class="nav-item">
+                    <button class="scroll-button" id="navbar-apostolic" dir="auto" onclick="smoothScroll('#apostolic'); showApostolicSection();"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apostolic movement</font></font></button>
+                </li>
+                <li class="nav-item">
+                    <button class="scroll-button" id="navbar-connect" dir="auto" onclick="smoothScroll('#connnect'); showAllSections();"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">communication</font></font></button>
+                </li>    
+            </ul>
+        </div>
+    </nav>
+
+    <div class="sections">
+
+        <section class="section-content" id="home" style="background-image: url(&quot;https://i.postimg.cc/c1zGjZt5/2.jpg&quot;); display: flex;">
+            <div class="content">
+                <h1 id="home-header" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">St. Maron Parish - Jish</font></font></h1>
+            </div>
+        </section>
+
+        <section class="section-content" id="pray" style="display: block;">
+            <div class="content">
+                <h2 id="pray-header" dir="auto"><ins><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Prayers and Masses</font></font></ins></h2>
+                <div class="prayer-info">
+                    <h3 id="prayer1" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sunday Mass</font></font></h3>
+                    <p id="prayer-info1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Prayer Time: 10:00 AM </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Location: Church</font></font></p>
+                </div>
+                <div class="prayer-info">
+                    <h3 id="prayer2" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Daily Mass</font></font></h3>
+                    <p id="prayer-info2" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Prayer time: 5:00 pm </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Location: Chapel</font></font></p>
+                </div>
+                <div class="prayer-info">
+                    <h3 id="prayer3" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Christmas Eve</font></font></h3>
+                    <p id="prayer-info3" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Prayer time: 7:00 PM </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Location: Church</font></font></p>
+                </div>
+                <div class="prayer-info">
+                    <h3 id="prayer4" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Christmas</font></font></h3>
+                    <p id="prayer-info4" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Prayer Time: 10:00 AM </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Location: Church</font></font></p>
+                </div>
+                <div class="prayer-info">
+                    <h3 id="prayer5" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Easter Eve</font></font></h3>
+                    <p id="prayer-info5" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Prayer time: 7:00 PM </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Location: Church</font></font></p>
+                </div>
+                <div class="prayer-info">
+                    <h3 id="prayer6" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Easter</font></font></h3>
+                    <p id="prayer-info6" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Prayer Time: 10:00 AM </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Location: Chapel</font></font></p>
+                </div>
+                <div class="prayer-info">
+                    <h3 id="prayer7" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Palm Sunday procession</font></font></h3>
+                    <p id="prayer-info7" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Prayer time: 10:30 AM </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Location: Church Square to the beginning of the town</font></font></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-content" id="info" style="display: none;">
+            <h1 class="info-content" id="info-header" style="color: #000000; font-size: 3rem; margin-bottom: 80px;"><img src="https://i.postimg.cc/1X3CFRx8/church-logo.png" border="0" alt="church-logo"><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">information</font></font></h1>
+            <button class="info-button" id="statistics-button" style="margin-bottom: 50px;" onclick="showInfoSubSection('statistics')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">statistics</font></font></button>
+            <button class="info-button" id="ekliros-button" style="margin-bottom: 50px;" onclick="showInfoSubSection('ekliros')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Clergy</font></font></button>
+            <button class="info-button" id="berem-button" style="margin-bottom: 50px;" onclick="showInfoSubSection('berem')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kafr Bir'im</font></font></button>
+            <button class="info-button" id="jish-button" style="margin-bottom: 50px;" onclick="showInfoSubSection('jish')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Al-Jish - Saint Paul's Town</font></font></button>
+            
+            <div class="info-content" id="jish" style="display: block;"><!-- Content for jish -->
+                <h2 id="jish-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Al-Jish - Saint Paul's Town</font></font></h2>
+                <button class="jish-button" id="jish-churches-button" style="margin-bottom: 50px;" onclick="showJishSubSection('churches')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Churches</font></font></button>
+                <button class="jish-button" id="Jhistory-button" style="margin-bottom: 50px;" onclick="showJishSubSection('Jhistory')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">date</font></font></button>
+                
+                <div class="jish-content" id="churches" style="display: block;"><!-- Content for churches -->
+                    <h2 id="churches-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Churches</font></font></h2>
+                    <button class="jish-button" id="botros-button" style="margin-bottom: 50px;" onclick="showChurchSubSection('botros')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">St. Peter and Paul Church</font></font></button>
+                    <button class="jish-button" id="Jsayeda-button" style="margin-bottom: 50px;" onclick="showChurchSubSection('Jsayeda')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Church of Our Lady</font></font></button>
+                    <button class="jish-button" id="maroon-button" style="margin-bottom: 50px;" onclick="showChurchSubSection('maroon')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">St. Maron Church</font></font></button>
+                    
+                    <div class="jish-content" id="maroon" style="display: block;"><!-- Content for maroon -->
+                        <h2 id="maroon-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">St. Maron Church</font></font></h2>
+                        <p id="maroon-p1" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Since the Church of the Virgin Mary was no more than 100 square meters, we began to think about building a new church bearing the name of the patron saint of the Maronite Church, Saint Maron. Work began in 1980, and on February 21, 1982, the late Bishop Youssef Khoury laid the foundation stone; then, his successor, the late Bishop Maron Sader, inaugurated the church on August 24, 1996, amidst a majestic crowd of bishops and priests of the Catholic Church in the Holy Land and of the sons and daughters of the parishes of Galilee.</font></font></p><br>  
+                        <div class="photo-container">
+                            <div class="maroon-photos">
+                                <img id="hagar-alasas" src="https://i.postimg.cc/26zsrP3n/image.jpg">
+                                <h5 id="hagar-alasas-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Four electric bells from Greece, 2009</font></font></h5>
+                            </div>
+                            <div class="maroon-photos">
+                                <img id="garaseya" src="https://i.postimg.cc/R0Vp2vjx/image.png">
+                                <h5 id="garaseya-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">With Abbot Augustine Harfoush and friend Ibrahim Issa near the foundation stone</font></font></h5>
+                            </div>
+                        </div>
+                        <p id="maroon-p2" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The work did not end with the inauguration of the church, but continued to this day. The church was equipped with new seats and Czech crystal chandeliers, and in 2004, with the Vitrage, which decorated 60 windows with Maronite icons representing major feasts, famous saints, and the mysteries of the Rosary. In 2005, the church was inlaid from the outside with stone, and until that year the costs of building the church and halls amounted to more than 3.5 million dollars, the vast majority of which came from donations of money or labor from parishioners, and the rest from external donations. In 2008-2009, a bell tower about 25 meters high was built, and in 2017, a wooden entrance was built. In 2018, a large-scale restoration of the church was carried out from the inside, which included the addition of a huge central air conditioning unit, decorating the ceiling, the structure, and the church columns with wood, and inlaying the two walls adjacent to the structure with shekel stone.</font></font></p><br>
+                        <p id="maroon-p3" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The church covers an area of ​​about 600 m2, while the halls on the lower floor cover an area of ​​about 1,000 m2. These halls include the youth club and the library (about 200 m2, restored in 2019; the library contains dozens of encyclopedias, dictionaries and hundreds of books), the large hall (about 350 m2), the diwan (120 m2, part of which was restored in 2020), the church lounge (70 m2), the shelter (60 m2) and some rooms. There are also three courtyards surrounding the church from the north, east and south with an area of ​​more than 3,500 m2. All of these places serve the parish in its joys, sorrows and various activities.</font></font></p><br>
+                        <div class="photo-container">
+                            <div class="maroon-photos">
+                                <img id="maroon-inside" src="https://i.postimg.cc/zvYxyLGv/image.jpg">
+                                <h5 id="maroon-inside-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Church from inside</font></font></h5>
+                            </div><br>
+                            <div class="maroon-photos">
+                                <img id="salon" src="https://i.postimg.cc/NMPVJGDk/image.jpg">
+                                <h5 id="salon-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">A side of the parish hall</font></font></h5>
+                            </div>
+                            <div class="maroon-photos">
+                                <img id="diwan" src="https://i.postimg.cc/h4XPSfkg/image.jpg">
+                                <h5 id="diwan-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Parish Council</font></font></h5>
+                            </div>
+                            <div class="maroon-photos">
+                                <img id="nadi" src="https://i.postimg.cc/ZnBQ1kDt/image.jpg">
+                                <h5 id="nadi-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Youth Club</font></font></h5>
+                            </div>
+                            <div class="maroon-photos">
+                                <img id="hall" src="https://i.postimg.cc/vZvjVtJn/image.jpg">
+                                <h5 id="hall-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Knights' theatrical performance in the great hall</font></font></h5>
+                            </div>
+                            <div class="maroon-photos">
+                                <img id="maktaba" src="https://i.postimg.cc/vHYSdVgH/image.jpg">
+                                <h5 id="maktaba-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">A side of the parish library</font></font></h5>
+                            </div>
+                        </div><br><br><hr><br>
+                        <button class="jish-button" id="jish-harakat-button" style="margin-bottom: 50px;" onclick="showHarakatSubSection('harakat')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Parish movements and activities</font></font></button>
+                        <div class="jish-content" id="harakat" style="display: block;"><!-- Content for harakat -->
+                            <h2 id="harakat-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">St. Maron's movements and activities</font></font></h2>
+                            <button class="scroll-button" id="navbar-apostolic" onclick="smoothScroll('#apostolic'); showApostolicSection();"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apostolic movement</font></font></button><br><br><br><br>
+                            <p id="harakat-p1" dir="auto"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The Pastoral Council:</font></font></b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> It includes a number of the best men in the parish; they accompany the parish priests in visiting the homes of the faithful, in giving communion to the elderly, and in visiting the sick in the hospital, and they set a good example through their religious practice and personal sacrifice.</font></font></p><br>
+                            <img id="majless" src="https://i.postimg.cc/9F6kFkgD/image.jpg"><br><br>
+                            <p id="harakat-p2" dir="auto"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Endowment Committee:</font></font></b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Although it has been limited in the last ten years to only two members, it has not failed to ensure the interest of the endowment, invest in it, and participate in making decisions to establish projects and restore and maintain endowment buildings. I must stop at its two members:</font></font></p><br>
+                            <p id="harakat-p3" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">• Committee member, Brother Benoit Habib: He helps me with reviewing accounts, preparing the annual budget, correspondence, communications, and all necessary publications. He has an office for various insurances in the Waqf building. He is by my side at all times and is ready to leave his work and provide any emergency assistance. Because of his knowledge, morals, and honesty, I have made him a personal friend and secretary for twenty years. I cannot thank him enough for his sacrifices and donations to the church, but I ask God to protect him and all members of his family.</font></font></p>
+                            <p id="harakat-p4" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">• Committee member, Brother Deeb Emtans Maroun: He specializes in the field of construction. He is my personal advisor in urban affairs due to his expertise in engineering, design, and project implementation. He does not skimp on me or the church in any way. This is not strange, as his father, the late Emtans Abdullah Maroun, was one of the closest people to me and my work in the church of Jish and Kafr Bir’im. He always accompanied me in preparing the work assessments and preparing the budgets required for each stage of construction. He and his partners, Mr. Ibrahim Issa and the late Nimer Shukri Yaqoub, completed the first stage of construction on the ground floor, and they continued to provide assistance in the subsequent stages.</font></font></p><br>
+                            <div class="photo-container">
+                                <div>
+                                    <img id="beino" src="https://i.postimg.cc/TYPT5x5N/image.jpg">
+                                    <h5 id="beino-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Benoit Habib</font></font></h5>
+                                </div>
+                                <div>
+                                    <img id="deeb" src="https://i.postimg.cc/bNFpQ5Qy/image.jpg">
+                                    <h5 id="deeb-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Deep Maroon</font></font></h5>
+                                </div>
+                            </div>
+                            <p id="harakat-p5" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">These two dear men are like wings without which I cannot fly, or without one of them. I thank them from the bottom of my heart, on behalf of myself and the parishioners.</font></font></p><br>
+                            <p id="harakat-p6" dir="auto"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Church Choir:</font></font></b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> It serves the Mass and religious celebrations, and with its beautiful voices it transports the faithful from the earthly to the heavenly. It also takes care of cleaning the church and decorating it on major occasions.</font></font></p>
+                            <img id="choir" src="https://i.postimg.cc/TwGDs5mQ/image.jpg"><br><br>
+                            <p id="harakat-p7" dir="auto"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Immaculate Conception Brotherhood:</font></font></b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> meets once a week to pray and meditate on the Holy Bible and the Maronite Liturgy; they also visit the elderly and help clean the church; after Sunday Mass, they prepare coffee and refreshments for the parishioners in the church hall and for guests from outside the village.</font></font></p><br>
+                            <img id="danas" src="https://i.postimg.cc/L6w5ggy5/image.jpg"><br>
+                            <p id="harakat-p8" dir="auto"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Concert:</font></font></b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> In recent years, several concerts (chanting and classical religious music) have been held in the Church of St. Maron, most of them directed by Mrs. "Ada Belge" and with the participation of dozens of the best musicians and singers and between 500-800 people from all over the country. These gatherings have contributed to revitalizing the economy in the village, such as restaurants and shops, and to putting the village of Jish on the country's tourist map. Part of the costs were contributed by the billionaire "Steve Wardheimer"; this great and decent man established a factory near the village that employs a large number of our children. One day, he invited me to his office to participate in breakfast and talk about the economic situation of the village. I arrived at the appointed time to his office, and his business manager received me and called him saying: "His Holiness the Father has arrived." But he had forgotten the appointment and went to inspect one of his factories in the Nahariya area, so he replied: "I will be in five minutes." Moments later, his small plane landed next to the office and he entered and apologized for being late. This 95 year old man has made a huge impression on me.</font></font></p><br><br>
+                            <p id="harakat-p9" dir="auto"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Religious trips:</font></font></b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> The parish used to organize annual trips to the main shrines in Europe, especially Lourdes and Fatima; it also organized annual trips to the holy places in Jerusalem, Bethlehem, Nazareth and Tiberias. These trips included visiting Italy, France and Spain six times; visiting Spain and Portugal four times; and a trip to Greece (Athens and some islands). A trip to Northern Europe: Paris, Brussels, Cologne, Amsterdam, The Hague, Reims, Amiens, Rouen, Lisieux, Versailles, Chartres and London. A trip to Russia: Moscow and Petersburg. A trip to the Scandinavian countries: Sweden, Denmark, Finland, Norway. A trip to Egypt: Cairo and Mount Saint Catherine with the catechumens. Two trips to Jordan to meet His Beatitude Patriarch Sfeir and inaugurate the Church of Saint Charbel in Amman. Two trips to Lebanon with the dear Deacon Sobhi Makhoul (thanks for his efforts), to visit Annaya, Harissa, the Valley of the Saints and other holy places. More than 700 people participated in these trips (about 20 in number). The most important trips were in 1998 on the occasion of the beatification of the Venerable Nehmatallah Hardini, in 2001 on the occasion of the canonization of Sister Rafqa, and in 2004 the canonization of Blessed Nehmatallah Hardini.</font></font></p><br><br>
+                            <div class="photo-container">
+                                <div class="pray-trips">
+                                    <img id="safy" src="https://i.postimg.cc/gjx0J3ZY/image.jpg">
+                                    <h5 id="safy-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">With the giant Wadih El Safi in Rome on the occasion of Al-Hardini's beatification in 1998</font></font></h5>
+                                </div>
+                                <div class="pray-trips">
+                                    <img id="barca" src="https://i.postimg.cc/kXF395jV/1.jpg">
+                                    <h5 id="barca-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Parish trip to Barcelona 2005</font></font></h5>
+                                </div>
+                                <div class="pray-trips">
+                                    <img id="roma" src="https://i.postimg.cc/WpZcW8gw/2.jpg">
+                                    <h5 id="roma-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Parish trip to Rome in 2005</font></font></h5>
+                                </div>
+                                <div class="pray-trips">
+                                    <img id="espania" src="https://i.postimg.cc/ZKht1NLt/3.jpg">
+                                    <h5 id="espania-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Parish trip to Spain in 2009</font></font></h5>
+                                </div>
+                                <div class="pray-trips">
+                                    <img id="baby" src="https://i.postimg.cc/26sRjLRW/image.jpg">
+                                    <h5 id="baby-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">With His Beatitude Patriarch Bechara Al-Rahi and the child Bechara Elias Suleiman</font></font></h5>
+                                </div>
+                                <div class="pray-trips">
+                                    <img id="tringle" src="https://i.postimg.cc/SRc0nQkv/image.jpg">
+                                    <h5 id="tringle-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">With the late Patriarch Sfeir</font></font></h5>
+                                </div>
+                            </div><br><br><br>
+                            <p id="harakat-p10" dir="auto"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mercy Fund:</font></font></b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Since the 1980s, the parish has been providing food and medicine to our brothers in southern Lebanon. In 2000, it provided about 21 tons of food to our Palestinian brothers in Jerusalem, some of which were contributed by brothers from the Islamic community. In 2021, the parish, at the initiative of the Apostolic Movement, provided food and cleaning supplies to orphans in Bethlehem, weighing more than five tons. Over the past few years, the parish has donated about $30,000 to the needy in Syria and Lebanon, through several venerable bishops. In 2020 and 2021 (during the Corona pandemic), the parish donated $150,000 to our people in Kafr Bir’im and Jish in Lebanon. The parish has also not been short in helping the needy locally. And this is just the tip of the iceberg.</font></font></p><br>
+                            <img id="aytam-help" src="https://i.postimg.cc/1tJJRfgH/image.png">
+                            <h5 id="aytam-help-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Orphan Aid, 2021</font></font></h5>
+                        </div><hr>
+                        <p id="maroon-p4" dir="auto"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The Convent of the Nuns:</font></font></b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> In 1956, with the help of the late Monsignor Fergani, the convent was built on the land of the Waqf and the Rosary Sisters lived there, serving the parish until 1997. After that, the Maronite Sisters of Saint Therese of the Child Jesus came to serve the parish. In 1991, more than 80 m2 were added to the first floor of the convent, and in 1998, another 80 m2 were added to the second floor, and the entire convent was furnished with new furniture after a radical renovation of the old building. In 2018, we carried out additional renovations inside the convent, and inlaid the northern and western facades with stone. The Rosary Sisters served the parish for 40 years, as did the Sisters of Saint Therese of the Child Jesus for 20 years, and we will not forget these nuns who worked in the parish in our prayers.</font></font></p><br>
+                        <div class="photo-container">
+                            <div class="maroon-photos">
+                                <img id="deer" src="https://i.postimg.cc/m2QBCtL1/image.jpg">
+                                <h5 id="deer-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The monastery is on the second floor, and the clinic is on the first floor.</font></font></h5>
+                            </div>
+                        </div>
+                        <div class="photo-container">
+                            <div class="maroon-photos">
+                                <img id="sis-noel" src="https://i.postimg.cc/BvV6ZpGf/image.jpg">
+                                <h5 id="sis-noel-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sister Noel Zaher</font></font></h5>
+                            </div>
+                            <div class="maroon-photos">
+                                <img id="sis-vivian" src="https://i.postimg.cc/bvJrjMWR/image.jpg">
+                                <h5 id="sis-vivian-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The late sister Vivian Maalouf</font></font></h5>
+                            </div>
+                            <div class="maroon-photos">
+                                <img id="sis-michlin" src="https://i.postimg.cc/cLTC2Z9H/image.jpg">
+                                <h5 id="sis-michlin-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sister Micheline Mansour</font></font></h5>
+                            </div>
+                            <div class="maroon-photos">
+                                <img id="sis-sayeda" src="https://i.postimg.cc/v8zWbRSJ/image.jpg">
+                                <h5 id="sis-sayeda-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sister Sayyida Tannous</font></font></h5>
+                            </div>
+                        </div><br>
+                        <p id="maroon-p5" dir="auto"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Waqf Building:</font></font></b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Since there was an unused plot of land between the nuns’ convent and the main street, we built two floors, each with an area of ​​more than 100 m2. The cost of this building amounted to 75 thousand dollars; since the year 2000, this building has provided a reasonable monthly income for the church from the rent of the offices in it.</font></font></p>
+                        <div class="photo-container">
+                            <div class="maroon-photos">
+                                <img id="amaret-alwaqef" src="https://i.postimg.cc/x1zVhNvg/image.jpg">
+                                <h5 id="amaret-alwaqef-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Waqf building</font></font></h5>
+                            </div>
+                        </div><br>
+                        <p id="maroon-p6" dir="auto"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Virgin's Garden:</font></font></b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> In the southern front yard of the church, covering an area of ​​approximately 1,000 square meters, we created a garden in honor of the Virgin with a statue in the center. The work was completed in May 2006, and the inauguration of the garden was celebrated at the end of the Marian month. The garden project cost more than $10,000.</font></font></p>
+                        <div class="photo-container">
+                            <div class="maroon-photos">
+                                <img id="hadeket-alaadra" src="https://i.postimg.cc/7ZmWZg3q/image.jpg">
+                                <h5 id="hadeket-alaadra-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Virgin Garden</font></font></h5>
+                            </div>
+                        </div><br>
+                        <p id="maroon-p7" dir="auto"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Church car:</font></font></b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> This car is used to transport the dead from the hospital to the church and then to the cemeteries in Jish or Kafr Bir'im. From the bottom of my heart, I thank my dear brother Elie Tawfiq Zaknoun, the skilled mechanic, who takes care of this car, and does the repairs, annual checks and licensing at his own expense, in addition to his donations to the church.</font></font></p>
+                        <div class="photo-container">
+                            <div class="maroon-photos">
+                                <img id="seyara" src="https://i.postimg.cc/qvDH5fZc/image.jpg">
+                                <h5 id="seyara-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">church car</font></font></h5>
+                            </div>
+                        </div><br>
+                    </div>
+                    
+                    <div class="jish-content" id="Jsayeda" style="display: none;"><!-- Content for harakat -->
+                        <h2 id="Jsayeda-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Church of Our Lady</font></font></h2>
+                        <p id="Jsayeda-p1" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The Church of Our Lady stands as a witness to the Maronite presence in Jish for decades. We do not know the year the church was built, but we do know that it was rebuilt in 1838, a year after the earthquake that destroyed the village. There is a stone in the church that dates this event, and it is engraved on it:</font></font></p><br>
+                        <p id="Jsayeda-poem" style="text-align: center;" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The construction of this shrine was renewed after the devastation and collapse </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">of an earthquake that disturbed all creatures and people, </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">with the presence of...our honorable shepherd, Bishop Abdullah, the respected, </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">at the hands of the most insignificant of all, Father Stephan. He hopes to conclude </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">this matter. They dated the end of the pain of grief in the year 1838.</font></font></p><br>
+                        <p id="Jsayeda-p2" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The church has been restored several times, the last restoration being in 2021.</font></font></p><br>
+                        <img id="Jsayeda-after1" src="https://i.postimg.cc/7ZL7172s/2021.jpg">
+                        <img id="Jsayeda-after2" src="https://i.postimg.cc/vZSn0B7Q/2021-2.jpg"><br>
+                        <h5 id="Jsayeda-after-d" style="text-align: center;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Our Lady Church after restoration 2021</font></font></h5>
+                    </div>
+                    
+                    <div class="jish-content" id="botros" style="display: none;"><!-- Content for harakat -->
+                        <h2 id="botros-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">St. Peter and Paul Church</font></font></h2>
+                        <p id="botros-p1" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Since I took over the parish service, I knew that my responsibility was not only towards my parishioners, but extended beyond that to include the Greek Catholic parishioners of St. Peter and Paul, especially between the years 1975 and 2000, when I was the only priest in the village, and I was assigned to serve the sister parish, and I never differentiated between Peter and Maron, for we are all for Christ. I bear witness here that our Greek Catholic brothers contributed, like their Maronite brothers, to the construction of St. Maron Church, and donated money and labor. I cannot forget in particular the late Nakhl Zakaria Haddad and his brother Adeeb Haddad, and the brilliant engineer George Youssef Haddad.</font></font></p><br>
+                        <div class="photo-container">
+                            <div class="botros-photos">
+                                <img id="hadi" src="https://i.postimg.cc/1txfd7Wt/image.jpg">
+                                <h5 id="hadi-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Father Hadi Qassis: Priest of St. Peter and Paul Greek Catholic Parish in Jish; </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">born 12.1.1975; ordained priest 25.3.2017</font></font></h5>
+                            </div>
+                            <div class="botros-photos">
+                                <img id="simon" src="https://i.postimg.cc/zfHy0YF6/image.jpg">
+                                <h5 id="simon-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Father Simon Haddad: Assistant Priest of St. Peter and Paul Greek Catholic Parish in Jish; </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">born 5/28/1964; ordained priest on 3/27/2021</font></font></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="jish-content" id="Jhistory" style="display: none;"><!-- Content for Jhistory -->
+                    <h2 id="Jhistory-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">date</font></font></h2>
+                    <p id="Jhistory-p1" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">A historical village, known in ancient times as "Jiskala." From it came Yohannan the Jeshi, the leader of the Jewish revolt against the Romans, and from it came the family of Saint Paul before leaving for Tarsus. In his book Famous Men, Saint Jerome (+420), one of the Church Fathers, wrote the following:</font></font></p><br>
+                    <p id="Jhistory-p2" dir="auto" style="margin: 0 13vw 0 13vw;"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">“Paul, who was formerly called Saul, was an apostle outside the Twelve, from the tribe of Benjamin and the city of Giscala in Judea. When Giscala was occupied by the Romans, Paul left with his parents for Tarsus in Cilicia. His parents sent him to Jerusalem to study the law, and he was educated by Gamaliel, a sign mentioned by Luke. But after witnessing the martyrdom of Stephen and receiving letters from the high priest of the temple to persecute those who believed in Christ, he traveled to Damascus. Being bound to the faith by revelation, as is written in the Acts of the Apostles, he was transformed from a persecutor into a chosen vessel.”</font></font></p><br>
+                    <p id="Jhistory-p3" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Some Bible scholars mention that Jesus Christ entered the village on his way from Tiberias to the Tyre and Sidon region via Wadi al-Amud.</font></font></p><br>
+                    <p id="Jhistory-p4" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Jish is located in the Upper Galilee at an altitude of 835 meters. According to state statistics for 2019, the village is home to 3,105 people, 1,524 males and 1,580 females. About 37% (1,148) of them are Muslims, 11% (341) are Greek Catholics, and 52% (1,614) are Maronites. It has an old mosque and three churches: the Greek Catholic Church of St. Peter and Paul (built in 1906), the Maronite Church of Our Lady (rebuilt in 1838), and the Maronite Church (inaugurated on 24.8. 1996).</font></font></p><br>
+                    <p id="Jhistory-p5" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The area of ​​Jish lands is about 12,500 dunums, of which about 2,500 dunums are under irrigation and require 935,000 cubic meters of water. It is worth mentioning that agriculture in Jish is advanced, and the fruits are delicious due to the fertile land and wonderful weather.</font></font></p><br>
+                    <p id="Jhistory-p6" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">There are two schools in the village, an elementary school with about 373 students from grades one to eight and a high school affiliated with the Roman Catholic Church with about 177 students. The village is distinguished by the high cultural level of its male and female students. There are dozens who hold a first degree, a good number who hold a second degree and others who hold a third degree. According to state statistics for 2019, 40.7% of the village’s population, aged 25-54, hold a university degree. Also, according to state statistics, the average monthly income per capita is $1,341.</font></font></p><br>
+                    <p id="Jhistory-p7" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The village has a post office, a Leumi Bank branch, a Clalit health fund and a Leumit health fund, a Histadrut home, a nursing home, a community center, a soccer field, and several basketball courts.</font></font></p><br>
+                    <p id="Jhistory-p8" dir="auto"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The priests of the Jish parish and their assistants:</font></font></b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> The first to serve the parish was Father Stephan Dakhoul (around 1800), followed by: Father Youssef Dakhoul (1855-1902); Father Youssef Aql (1901-1938); Father Youssef Dakhoul Alam (1917-1933); Father Elias Sousan (1901-1956); Father Youssef Sousan (1931-1967); and Father Kamel Farah (1976-1971). Since 1971, the parish has been served by Father Bechara Sleiman. He was assisted, between 2008-2010, by Father Samer Zaknoun, and since 2015, by Father Sandy Habib.</font></font></p>
+                </div>
+            </div>
+
+            <div class="info-content" id="berem" style="display: none;"><!-- Content for berem -->
+                <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kafr Bir'im</font></font></h2>
+                <button class="berem-button" style="margin-bottom: 50px;" onclick="showBeremSubSection('Bchurch')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The Church</font></font></button>
+                <button class="berem-button" style="margin-bottom: 50px;" onclick="showBeremSubSection('Bhistory')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">date</font></font></button>
+                
+                <div class="berem-content" id="Bhistory" style="display: none;"><!-- Content for Bhistory -->
+                    <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">date</font></font></h2><br>
+                    <p id="Bhistory-p1" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">It is an ancient village located on the Lebanese border. Its inhabitants were displaced in 1948; some of them moved to Lebanon and others to Jish. The Supreme Court ruled in 1952 in favor of the people of Kafr Birem, but successive governments refused to implement the ruling, and one of them even gave the order to destroy the village in 1953. The population before the displacement was about 1,000 people (150 houses) and its land area was about 12,500 dunams, of which about 1,000 dunams were registered in the name of the Maronite Waqf.</font></font></p><br>
+                </div>
+                
+                <div class="berem-content" id="Bchurch" style="display: none;"><!-- Content for church -->
+                    <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Our Lady Church in Kafr Bir'im</font></font></h2>
+                    <p id="Bchurch-p1" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">There is no doubt that the history of this church dates back to the late eighteenth century. In 1860, the church was burned with its contents and records, and after more than ten years, the locals built the current church. In 1926, with the beginning of the use of cement in the area, the people of Bir'am poured the roof of the church with cement, and they had collected the necessary gravel from the village's graves. Since the displacement in 1948, the church was closed and no one was allowed to open it, but in 1972, the people of Bir'am went to the church and opened it, and hundreds of them staged a sit-in in their stricken village, and clashed with police and army forces, so the parish priest, Father Bishara Suleiman, and fourteen men were arrested and thrown in prison. A trial was held for them the next day, and they were acquitted. The locals restored the church, and during the following years, many baptisms and wreaths were held there, and mass was celebrated on Christmas, Palm Sunday, and Easter. Since 2009, the Divine Mass has been celebrated weekly in the church.</font></font></p><br>
+                    <div class="photo-container">
+                        <div class="berem-photos">
+                            <img id="Bchurch-photo" src="https://i.postimg.cc/sxHgtGGf/image.jpg">
+                            <h5 id="Bchurch-photo-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Our Lady Church in Kafr Bir'im</font></font></h5>
+                        </div>
+                        <div class="maroon-photos">
+                            <img id="Bmadafen" src="https://i.postimg.cc/Zn5q7xRD/image.jpg">
+                            <h5 id="Bmadafen-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Kafr Bir'im Cemetery</font></font></h5>
+                        </div>
+                    </div><br>
+                    <p id="Bchurch-p2" dir="auto"><b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Priests of Kafr Bir’im Parish:</font></font></b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> The first to serve the parish was Father Paul Matar (1760), followed by: Father Andraos Abu Fares (1770-1801); Father Youssef Richa (1785-1806); Father Elias Youssef Richa (1807-1857); Father Youssef Elias Richa (1855-1913); Father Youssef Al-Shawfani (1860-1899); Father Mansour Assi (1860-1899); Father Moussa Elias Sousan (1860-1900); Father Elias Sousan (1901-1948) and Father Youssef Elias (1911-1948); Father Youssef Sousan (1931-1948); Father Bechara Suleiman (1972-2009); Father Samer Zaknoun (2009-2010); Father Afif Makhoul (2010-2016); Father Youssef Yaqoub (2016-2018), and Father Salim Sousan (2018-present).</font></font></p>
+                </div>
+            </div>
+
+            <div class="info-content" id="ekliros" style="display: none;"><!-- Content for ekliros -->
+                <h2 id="ekliros-heading" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Diocesan Clergy and Patriarchal Vicariates</font></font></h2>
+                <div class="photo-container">
+                    <div class="photo-item">
+                        <img id="Ebeshara" src="https://i.postimg.cc/4dPXJdxz/image.jpg" alt="Photo 1">
+                        <h5 id="Ebeshara-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Father Bechara Sleiman: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Priest of the Mar Maroun Parish; born on 1.8.1947; ordained a priest on 14.8.1971</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="Esaleem" src="https://i.postimg.cc/t7GgV1cj/image.png" alt="Photo 2">
+                        <h5 id="Esaleem-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bishop Salim Sousan: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Born 02.04.1943; Ordained a priest 14.09.1967</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="Emotran" src="https://i.postimg.cc/dVRBZDgq/سيادة_المطران_موسى_الحاج.jpg" alt="Photo 3">
+                        <h5 id="Emotran-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">His Eminence, Archbishop Moussa El-Hage, </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Archbishop of Haifa and the Holy Land of the Maronites, Patriarchal Vicar for Jerusalem, the Palestinian Territories and the Hashemite Kingdom of Jordan; born 19.2.1954; ordained priest 14.8.1980 and bishop 28.7.2012</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="Enaji" src="https://i.postimg.cc/cHZwyNmX/البرديوط_ناجي_يعقوب.jpg" alt="Photo 4">
+                        <h5 id="Enaji-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bardiout Naji Yaqoub: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Born on 02/26/1956; Ordained a priest on 01/05/1986</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="Eafif" src="https://i.postimg.cc/1XSKRqKh/الأب_عفيف_مخول.jpg" alt="Photo 5">
+                        <h5 id="Eafif-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Father Afif Makhoul: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Parish Priest of Our Lady of the Rosary-Acre and Episcopal Vicar General; born on 2.4. 1952; ordained a priest on 28.8. 1983</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="Eyousef" src="https://i.postimg.cc/FR6gXSkx/image.jpg" alt="Photo 6">
+                        <h5 id="Eyousef-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Father Youssef Issa: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Priest of Our Lady of the Annunciation Parish in Nazareth; born 12/16/1951; ordained priest 10/1/1977</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="Ejousef" src="https://i.postimg.cc/xdLDk4Zb/الأب_جوزيف_سويد.jpg" alt="Photo 7">
+                        <h5 id="Ejousef-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Father Joseph Sweid: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Priest of Saint Charbel Parish in Amman; born 8/26/1966, ordained a priest on 5/30/1997</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="Enaael" src="https://i.postimg.cc/YC5BCHdH/الأب_نائل_حلو.jpg" alt="Photo 8">
+                        <h5 id="Enaael-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Father Nael Helou: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Assistant Priest of Our Lady of the Annunciation Parish in Nazareth; born on 02/24/1964, ordained a priest on 09/14/2002</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="Esobhe" src="https://i.postimg.cc/W3jR07RY/الشماس_الإنجيلي_صبحي_مخول.jpg" alt="Photo 9">
+                        <h5 id="Esobhe-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Evangelical Deacon Sobhi Makhoul: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Born on 10.7.1957; Ordained as a Deacon on 28.6.1998</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="Eyyaqoub" src="https://i.postimg.cc/Kv9G7j5r/الأب_يوسف_يعقوب.jpg" alt="Photo 10">
+                        <h5 id="Eyyaqoub-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Father Youssef Yaacoub: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Priest of Saint Louis the King Parish in Haifa; born on 6/30/1977; ordained a priest on 12/26/2009</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="Esamer" src="https://i.postimg.cc/GtsPLpkn/image.jpg" alt="Photo 11">
+                        <h5 id="Esamer-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Father Samer Zaknoun: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Born on 4/14/1971; ordained a priest on 8/14/2004</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="Eanton" src="https://i.postimg.cc/7ZfxK4sv/الأب_أنطوان_الدويهي.jpg" alt="Photo 12">
+                        <h5 id="Eanton-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Father Antoine Douaihy: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Priest of the Saint Maron Parish in Jerusalem; born on 5/27/1967; ordained a priest on 6/4/1994</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="Erodi" src="https://i.postimg.cc/kGc3wY3h/الأب_رودي_نورا.jpg" alt="Photo 13">
+                        <h5 id="Erodi-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Father Rudy Nora: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Parish Priest of St. Peter and Paul; born 2/18/1987; ordained priest at St. Joseph Latin Church, Haifa, 6/23/2017</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="Emagdy" src="https://i.postimg.cc/52Wgt877/image.jpg" alt="Photo 14">
+                        <h5 id="Emagdy-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Father Majdi Hashoul: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Priest of St. Charbel Parish in Usfiya; born on 11/09/1982; ordained a priest on 8/17/2019</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="Esandey" src="https://i.postimg.cc/sDKNfWz6/25425.jpg" alt="Photo 15">
+                        <h5 id="Esandey-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Father Sandy Habib: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Assistant Priest of St. Maron Parish in Jish; born on 10/16/1981; ordained a priest on 10/10/2015</font></font></h5>
+                    </div>
+                </div><br><br>
+                <h2 id="ekliros-Secondheading" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The clergy who served our parish</font></font></h2>
+                <div class="photo-container">
+                    <div class="photo-item">
+                        <img id="Eatnas" src="https://i.postimg.cc/zf0Fp6J6/الشماس_أتناس_عقل.jpg" alt="Photo 16">
+                        <h5 id="Eatnas-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Deacon Atnas Aql: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">He died on 11/20/1964 at the age of 62. He is credited with keeping the people of Jish in their village.</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="EYakel" src="https://i.postimg.cc/QNPSR2pr/الخوري_يوسف_عقل.jpg" alt="Photo 17">
+                        <h5 id="EYakel-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Father Youssef Akl: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Born in 1873; ordained a priest in 1901; died in 1938</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="EYalam" src="https://i.postimg.cc/wMSVLN6B/الخوري_يوسف_علم.jpg" alt="Photo 18">
+                        <h5 id="EYalam-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Father Youssef Alam: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">He was ordained a priest in 1917 and died in 1933.</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="EYsosan" src="https://i.postimg.cc/GpcjFd1v/image.jpg" alt="Photo 19">
+                        <h5 id="EYsosan-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Father Youssef Soussan: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Born on 6/18/1907; Ordained a priest on 9/22/1931; Died on 8/10/1987</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="EYelias" src="https://i.postimg.cc/50yqrgy0/image.jpg" alt="Photo 20">
+                        <h5 id="EYelias-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Father Youssef Elias: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Born in 1865; Ordained a priest on 7/15/1911; Died in Lebanon on 3/5/1974</font></font></h5><h5>
+                    </h5></div>
+                    <div class="photo-item">
+                        <img id="Eelias" src="https://i.postimg.cc/8P6wDZHf/image.jpg" alt="Photo 21">
+                        <h5 id="Eelias-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Father Elias Soussan: </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Born in 1868; Ordained a priest on 5/6/1901; Died on 1/10/1956</font></font></h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-content" id="statistics" style="display: none;"><!-- Content for statistics -->
+                <h2 id="statistics-heading" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">statistics</font></font></h2><br><br>
+                <h3 id="segel-alaomad" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">From the baptism record</font></font></h3><br>
+                <p id="statistics-aomad-p1" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Since I took over the parish ministry, 1,242 people have been baptized, 641 males and 601 females. I baptized 1,128 (91%) of them, and the rest were baptized by other priests on my behalf. The first person I baptized was Vera Hanna Mtanes Makhoul on 2.9.1971.</font></font></p><br>
+                <img id="statistics-img1" src="https://i.postimg.cc/nLsqfM2n/statistics1.png"><br><br>
+                <p id="statistics-aomad-p2" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The overwhelming majority (890 persons) of those baptized were under four years of age; 206 persons were baptized under one year of age, 392 persons were baptized at one year of age, 177 in their second year and 115 in their third year.</font></font></p><br>
+                <img id="statistics-img2" src="https://i.postimg.cc/6Q2wVNWH/statistics2.png"><br><br>
+                <p id="statistics-aomad-p3" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">About a quarter of the baptized (331 people, 27%) took a new name at baptism. The most common name among females is Therese (53 times), followed by Mary (45 times), while among males, Charbel comes first (43 times), followed by Maroun (22 times).</font></font></p><br>
+                <p id="statistics-aomad-p4" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">As previously mentioned, over the past fifty years, 1,242 people have been baptized in the parish. Of these, 205 were baptized in the 1970s and 216 in the 1980s, while the 1990s saw the highest number of baptisms, 285. In the first decade of the twenty-first century, 277 people were baptized, and in the second decade, 241 people. The year with the highest number of baptisms was 1998, with 39 baptisms, while the year with the lowest number of baptisms was 2020, with 10 baptisms, which can be attributed to the Corona pandemic.</font></font></p><br>
+                <img id="statistics-img3" src="https://i.postimg.cc/MprfKx3t/statistics3.png"><br><br>
+                <p id="statistics-aomad-p5" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Not all those registered in the baptism register were baptized in the same place. Between 1971 and 1986, baptism was celebrated either in the Church of Our Lady in Bir’em, in the nuns’ convent, or in the Church of Our Lady in Jish. Since 1986, following the opening of the large hall below the Church of St. Maron, the liturgical celebrations were moved there, and in 1996 to the church. It is worth noting that the Church of Our Lady in Jish and its counterpart in Bir’em continue to serve the parishioners to this day. About 60% of those baptized were baptized in the church of St. Maron; 13% in the nuns’ convent in Jish and the same percentage in the Church of Our Lady in Bir’em; about 9% were baptized in the Church of Our Lady in Jish, while the rest were baptized outside the parish. The first to be baptized in the Church of Our Lady in Bir’em, after its opening in 1972, was Nasrallah Sami Zahra; and the first to be baptized in the church of St. Maron was Mtanes Johnny Issa in 1986.</font></font></p><br>
+                <img id="statistics-img4" src="https://i.postimg.cc/DfJTth1n/statistics4.png"><br><br><br><br><br>
+                <h3 id="segel-alwafiyat" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">From the death record</font></font></h3><br>
+                <p id="statistics-wafat-p1" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">From 10.9.1971 until the time of writing this bulletin, 407 people died in the parish; 222 of them were males and 185 were females. Of the deceased, 214 were buried in the Jish cemetery, 192 in the Kafr Bir'am cemetery, and one in the Mar Louis Maronite Parish cemetery in Haifa.</font></font></p><br>
+                <img id="statistics-img5" src="https://i.postimg.cc/QtyrF8WN/statistics5.png"><br><br>
+                <p id="statistics-aomad-p2" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">If we exclude 24 persons whose ages are unknown from the total number of deceased, the average age of the rest is about 75 years; the average age of deceased males is 72.7 years, while the average age of deceased females is 78.6 years. The youngest person to die was the late Malika Samih Suleiman, who was nine months old. The centenarians who exceeded the 100-year threshold were the late Grace Yousef Zaknoun (100 years old), the late Almaza Aql Khreish (101 years old), the late Nasrallah Matans Zahra (101 years old), the late Ibrahim Habib Makhoul (102 years old), the late Masih Asaf Jubran (102 years old) and the late Jubran Habib Issa (102 years old).</font></font></p><br>
+                <img id="statistics-img6" src="https://i.postimg.cc/RVznh41L/statistics6.png"><br><br>
+                <p id="statistics-aomad-p3" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Of the total number of deceased whose ages were known (383 people), more than half (199 people, 52%) died when they were 80 years old or older, while 85 people died in their 80s (i.e. in their 70s), 132 in their 90s and 67 in their 10s.</font></font></p><br>
+                <img id="statistics-img7" src="https://i.postimg.cc/JzQ1xWkm/statistics7.png"><br><br>
+                <p id="statistics-aomad-p4" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">About 47% of people who died in the last five decades died between 2000 and 2019. The two years with the fewest deaths were 1985 and 2012, when only one person died in each. The year with the most deaths was 2019, when 17 people died. The average death rate over the past 50 years is about 8 people per year.</font></font></p><br><br>
+                <h5 id="adad-alwafiyat" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Deaths from September 1971 to June 2021</font></font></h5><br>
+                <div class="table-container">
+                    <div class="table-table">
+                        <table>
+                            <tbody><tr>
+                                <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Years</font></font></th>
+                                <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Number of males</font></font></th>
+                                <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Average age</font></font></th>
+                                <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Number of females</font></font></th>
+                                <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Average age</font></font></th>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1971-1981</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">31</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">61.5</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">35</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">77.3</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1981-1991</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">46</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">74.6</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">31</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">80.7</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1991-2001</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">44</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">68.45</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">30</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">72.43</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2001-2011</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">51</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">76.4</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">41</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">77.7</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2011-2021</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">52</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">76.5</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">52</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">79</font></font></td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                </div>
+                <h3 id="segel-zawaj" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">From marriage record</font></font></h3><br>
+                <p id="statistics-aomad-p4" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Since I took over the parish ministry, 485 wreaths have been blessed, distributed as follows over the last five decades: 64 wreaths in the 1970s, 95 in the 1980s, 102 in the 10th, and the peak was in the 2000s with 123 wreaths, followed by 91 wreaths between 2010-2019. I blessed 455 (93.8%) of the total wreaths, and the first wreath I blessed was for the late George Youssef Alam and Mrs. Latifa Afif Haloun.</font></font></p><br>
+                <div class="photo-container">
+                    <div class="zawaj-photos">
+                        <img id="statistics-img8" src="https://i.postimg.cc/9fNFwR0K/statistics8.png">
+                    </div>
+                    <div class="zawaj-photos">
+                        <img id="statistics-img9" src="https://i.postimg.cc/433x3bfp/statistics9.png">
+                    </div>
+                </div>
+                <p id="statistics-aomad-p4" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The overwhelming majority of the wreaths (304, 62.7%) were blessed in the Church of St. Maron in Jish, while 77 (15.9%) were blessed in the Church of Our Lady in Kafr Bir’im, 75 (15.5%) in the Church of Our Lady in Jish, 13 (2.6%) in the Church of St. Peter and Paul in the village, 5 (1%) in the Nuns’ Monastery in Jish, and the rest (11, 2.2%) outside the village.</font></font></p><br>
+                <img id="statistics-img10" src="https://i.postimg.cc/TPw0RSZG/statistics10.png"><br><br>
+                <p id="statistics-aomad-p4" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Saturday tops the list of days on which the sacrament of marriage is celebrated; over the past fifty years, this day has witnessed 336 weddings, while Friday witnessed 70, Sunday 56, and Thursday 20. As for the other days of the week, each witnessed only one wedding.</font></font></p><br><br><br>
+                <div class="table-container">
+                    <div class="table-table">
+                        <table>
+                            <tbody><tr>
+                                <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Year</font></font></th>
+                                <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">babtisims</font></font></th>
+                                <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Marriages</font></font></th>
+                                <th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Deaths</font></font></th>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1971</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">11</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1972</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">37</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1973</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">33</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">12</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1974</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">22</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1975</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">27</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1976</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">21</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1977</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">22</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">12</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1978</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">18</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1979</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">14</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1980</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">35</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1981</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1982</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">21</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">13</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1983</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">11</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">13</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1984</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">29</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">12</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1985</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">31</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1986</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">21</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">12</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1987</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">16</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1988</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">17</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">12</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1989</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">25</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1990</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">22</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">13</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1991</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">32</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1992</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">20</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">11</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1993</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">27</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">13</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1994</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">18</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1995</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">31</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1996</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">34</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1997</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">35</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1998</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">39</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1999</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">27</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">14</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2000</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">36</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">20</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2001</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">28</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">14</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2002</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">15</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">18</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2003</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">29</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">13</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2004</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">48</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2005</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">29</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">15</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2006</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">20</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">11</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">15</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2007</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">33</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2008</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">19</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">11</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2009</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">20</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">15</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">13</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2010</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">29</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">13</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2011</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">26</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2012</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">18</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2013</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">21</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">13</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2014</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">20</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">13</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">13</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2015</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">28</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2016</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">28</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2017</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">19</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">15</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2018</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">21</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">13</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2019</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">31</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">12</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">17</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2020</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">12</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2021</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3</font></font></td>
+                            </tr>
+                            <tr>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Total</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1242</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">485</font></font></td>
+                                <td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">407</font></font></td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-content" id="apostolic" style="display: none;">
+            <h1 class="apostolic-content" id="apostolic-header" style="color: #000000; font-size: 3rem; margin-bottom: 80px;"><img src="https://i.postimg.cc/tYWYxKzj/Black-Logo.png" border="0" alt="Black-Logo"><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Apostolic movement</font></font></h1>
+            <button class="apostolic-button" id="apostolic-groups" style="margin-bottom: 50px;" onclick="showSubSection('groups')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Groups</font></font></button>
+            <button class="apostolic-button" id="apostolic-photos" style="margin-bottom: 50px;" onclick="showSubSection('photos')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">photo</font></font></button>
+            <button class="apostolic-button" id="apostolic-info" style="margin-bottom: 50px;" onclick="showSubSection('AMinfo')"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">information</font></font></button>
+            
+            <div class="apostolic-content" id="groups" style="display: none;"><!-- Content for groups -->
+                <h2 id="groups-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Groups</font></font></h2>
+                
+                <h3 id="group1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Movement Committee</font></font></h3>
+                <div class="members-container">
+                    <div class="member">
+                        <h3 id="member1" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Hala Ayoub</font></font></h3>
+                        <div class="member-info">
+                            <p id="member1-contact" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Email: 7lawfoud@gmail.com </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Phone: 0525608131</font></font></p>
+                            <p id="member1-info" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Arabic language and Christian religious education teacher</font></font></p>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <h3 id="member2" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Vivian Lahoud</font></font></h3>
+                        <div class="member-info">
+                            <p id="member2-contact" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Email: lahoud.vivi@gmail.com </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Phone: 0523310111</font></font></p>
+                            <p id="member2-info" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Environmental Science and Hebrew Language Teacher</font></font></p>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <h3 id="member3" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Father Sandy Habib</font></font></h3>
+                        <div class="member-info">
+                            <p id="member3-contact" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Email: sandyhabib@gmail.com </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Phone: 0561651513</font></font></p>
+                            <p id="member3-info" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Parish Priest and Doctor in English</font></font></p>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <h3 id="member4" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rana Gebran</font></font></h3>
+                        <div class="member-info">
+                            <p id="member4-contact" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Email: ranajubran@gmail.com </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Phone: 0513154513</font></font></p>
+                            <p id="member4-info" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Information information information information information</font></font></p>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <h3 id="member5" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Beam of Shahada</font></font></h3>
+                        <div class="member-info">
+                            <p id="member5-contact" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Email: sho3a3shehady@gmail.com </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Phone: 0513564543</font></font></p>
+                            <p id="member5-info" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Information information information information information</font></font></p>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <h3 id="member6" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sivan Gibran</font></font></h3>
+                        <div class="member-info">
+                            <p id="member6-contact" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Email: sivanjubran@gmail.com </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Phone: 0513545344</font></font></p>
+                            <p id="member6-info" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Information information information information information</font></font></p>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <h3 id="member7" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Prince Suleiman</font></font></h3>
+                        <div class="member-info">
+                            <p id="member7-contact" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Email: amirsliman@gmail.com </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Phone: 0549846513</font></font></p>
+                            <p id="member7-info" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Information information information information information</font></font></p>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <h3 id="member8" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Rami Hashoul</font></font></h3>
+                        <div class="member-info">
+                            <p id="member8-contact" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Email: ramihashoul@gmail.com </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Phone: 0535185466</font></font></p>
+                            <p id="member8-info" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Information information information information information</font></font></p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 id="group2"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Youth</font></font></h3>
+                <div class="members-container">
+                    <div class="member">
+                        <div class="member-info">
+                            <p id="shabebe"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Eleventh and above, Day: Friday - Time: 18:00</font></font></p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 id="group3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The Vanguard</font></font></h3>
+                <div class="members-container">
+                    <div class="member">
+                        <div class="member-info">
+                            <p id="tla2e3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ninth and tenth, today: Friday - time: 18:00</font></font></p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 id="group4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Marines</font></font></h3>
+                <div class="members-container">
+                    <div class="member">
+                        <div class="member-info">
+                            <p id="mareens"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Seventh and Eighth, Today: Thursday - Time: 17:30</font></font></p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 id="group5"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Knights</font></font></h3>
+                <div class="members-container">
+                    <div class="member">
+                        <div class="member-info">
+                            <p id="fursan"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bustan-Sads, Today: Friday - Time: 15:30</font></font></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="apostolic-content" id="photos" style="display: none;"><!-- Content for photos -->
+                <h2 id="photos-header"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">photo</font></font></h2><br>
+                <div class="photo-container">
+                    <div class="photo-item">
+                        <img id="lagna-photo" src="https://i.postimg.cc/HW8dTqPt/أعضاء_لجنة_الحركة_الرسولية.jpg" alt="Photo 0">
+                        <h5 id="lagna" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Members of the Apostolic Movement Committee</font></font></h5>
+                    </div>
+                </div>
+                <div class="photo-container">
+                    <div class="photo-item">
+                        <img id="shabebe-kodas" src="https://i.postimg.cc/kgmn1Tsv/شبيبة_الحركة_الرسولية_بعد_قداس_الأحد.jpg" alt="Photo 1">
+                        <h5 id="shabebe-kodas-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Youth of the Apostolic Movement after Sunday Mass</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="shabebe-mo5ayam" src="https://i.postimg.cc/t4N9LFmQ/شبيبة_الحركة_الرسولية_في_مخيم_2019.jpg" alt="Photo 2">
+                        <h5 id="shabebe-mo5ayam-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Youth of the Apostolic Movement in Camp 2019</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="fursan-photo" src="https://i.postimg.cc/cH2WQh6Y/فرسان_الحركة_الرسولية.jpg" alt="Photo 3">
+                        <h5 id="fursan-photo-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Knights of the Apostolic Movement</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="prague" src="https://i.postimg.cc/VsXVkQ2q/رحلة_مرشدي_الفرسان_إلى_براغ،_2023.jpg" alt="Photo 7">
+                        <h5 id="prague-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Knight Guides Trip to Prague, 2023</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="germany" src="https://i.postimg.cc/wBx9H3St/رحلة_مرشدي_الفرسان_إلى_ألمانيا،_2019.jpg" alt="Photo 7">
+                        <h5 id="germany-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Knight Guides Trip to Germany, 2019</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="france" src="https://i.postimg.cc/GtDCzDsf/رحلة_مرشدي_الفرسان_إلى_فرنسا،_2018.jpg" alt="Photo 6">
+                        <h5 id="france-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Knight Guides Trip to France, 2018</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="malta" src="https://i.postimg.cc/YSXMSMHd/رحلة_مرشدي_الفرسان_إلى_مالطا،_2017.jpg" alt="Photo 5">
+                        <h5 id="malta-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Knights Guides Trip to Malta, 2017</font></font></h5>
+                    </div>
+                    <div class="photo-item">
+                        <img id="poland" src="https://i.postimg.cc/1tfPn2Rs/في_الأيام_العالمية_للشبيبة_في_پولندا،_2016.jpg" alt="Photo 4">
+                        <h5 id="poland-d" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">At World Youth Day in Poland, 2016</font></font></h5>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="apostolic-content" id="AMinfo" style="display: none;"><!-- Content for AMinfo -->
+                <h2 id="AMinfo-heading" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">information</font></font></h2><br>
+                <p id="AMinfo-p1" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">It is the beating heart of the parish. The apostolic movement emerged in the parish in the 1980s, but it took on a new look with the arrival of the Maronite Sisters of Saint Therese of the Child Jesus in late 1998. The movement consists of several groups: the Knights (students from kindergarten to sixth grade), the Marines (students in seventh and eighth grades), the Pioneers (students in ninth and tenth grades), the Youth (students in eleventh and twelfth grades), the Missionaries (university students), and the Married Group. The movement holds weekly spiritual-social meetings, in addition to several internal formations and trips throughout the year; in addition, the movement organized four trips for the Knights’ guides abroad: Britain in 2016, Malta in 2017, France in 2018, and Germany and Austria in 2019. The movement’s activities culminate in a summer camp that lasts about ten days on the church grounds; In 2019, the number of participants in the camp reached 318 boys and girls and about 50 male and female guides.</font></font></p>
+            </div>
+        </section>
+
+        <footer class="section-content" id="connnect" style="display: block;">
+            
+            <div class="contact-info">
+                <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Contact Us</font></font></h2>
+                <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Email: example@example.com</font></font></p>
+                <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Phone: 0558862438</font></font></p>
+            </div>
+
+            <div class="location">
+                <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Location</font></font></h2>
+                <a href="https://maps.app.goo.gl/JTw1AsajNrvvkfqUA"><img src="https://i.postimg.cc/qRtkdtSB/location-on-FILL0-wght400-GRAD0-opsz48.png"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mar Maron Church, Army, Israel</font></font></a>
+            </div>
+
+            <div class="social-media">
+                <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Follow Us</font></font></h2>
+                <a href="https://www.facebook.com/Apostolic.Movement.Jish" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/apostolic_movement_jish/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </footer>
+    </div><div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate" style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: 'Google Sans', Arial, sans-serif;" data-id=""><div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd"><div class=" VIpgJd-yAWNEb-hvhgNd-l4eHX-i3jM8c"><img src="https://fonts.gstatic.com/s/i/productlogos/translate/v14/24px.svg" width="24" height="24" alt=""></div><div class=" VIpgJd-yAWNEb-hvhgNd-k77Iif-i3jM8c"><div class="VIpgJd-yAWNEb-hvhgNd-IuizWc" dir="ltr">Original text</div><div id="goog-gt-original-text" class="VIpgJd-yAWNEb-nVMfcd-fmcmS VIpgJd-yAWNEb-hvhgNd-axAV1"></div></div><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid ltr"><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid-B7I4Od ltr" dir="ltr"><div class="VIpgJd-yAWNEb-hvhgNd-UTujCb">Rate this translation</div><div class="VIpgJd-yAWNEb-hvhgNd-eO9mKe">Your feedback will be used to help improve Google Translate</div></div><div class="VIpgJd-yAWNEb-hvhgNd-xgov5 ltr"><button id="goog-gt-thumbUpButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Good translation" aria-label="Good translation" aria-pressed="false"><span id="goog-gt-thumbUpIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7H2v13h16c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM7 18H4V9h3v9zm14-7l-3 7H9V8l4.34-4.34L12 9h9v2z"></path></svg></span><span id="goog-gt-thumbUpIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7v13h11c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM5 7H1v13h4V7z"></path></svg></span></button><button id="goog-gt-thumbDownButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Poor translation" aria-label="Poor translation" aria-pressed="false"><span id="goog-gt-thumbDownIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7h5V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zM17 6h3v9h-3V6zM3 13l3-7h9v10l-4.34 4.34L12 15H3v-2z"></path></svg></span><span id="goog-gt-thumbDownIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zm16 0h4V4h-4v13z"></path></svg></span></button></div></div><div id="goog-gt-votingHiddenPane" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><form id="goog-gt-votingForm" action="//translate.googleapis.com/translate_voting?client=te_lib" method="post" target="votingFrame" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><input type="text" name="sl" id="goog-gt-votingInputSrcLang"><input type="text" name="tl" id="goog-gt-votingInputTrgLang"><input type="text" name="query" id="goog-gt-votingInputSrcText"><input type="text" name="gtrans" id="goog-gt-votingInputTrgText"><input type="text" name="vote" id="goog-gt-votingInputVote"></form><iframe name="votingFrame" frameborder="0"></iframe></div></div></div>
+
+</body></html>
